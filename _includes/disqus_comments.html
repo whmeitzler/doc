@@ -5,7 +5,8 @@
   <script>
     //var disqus_developer = 1; // Comment out when the site is live
     var disqus_config = function () {
-      this.page.url = '{{ page.url | absolute_url }}';
+      //this.page.url = '{{ page.url | absolute_url }}';
+      this.page.url = window.location.href;
       this.page.identifier = '{{ page.url | absolute_url }}';
     };
 
@@ -13,7 +14,6 @@
       var d = document, s = d.createElement('script');
 
       s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
-      console.log(s)
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
